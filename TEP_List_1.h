@@ -1,5 +1,10 @@
+// Prevent including the header multiple times (not really possible in a single .cpp project, but a good practice to follow)
+#ifndef TEP_List_1
+#define TEP_List_1
+
+// String type support
 #include <string>;
-using namespace std; // dla string
+using namespace std; 
 
 // Constants:
 const int table_1_int_value = 34;
@@ -27,5 +32,4 @@ void v_alloc_table_fill_34(int iSize);
 bool b_alloc_table_2_dim(int*** piTable, int iSizeX, int iSizeY);
 bool b_dealloc_table_2_dim(int** piTable, int iSizeX, int iSizeY);
 
-
-//TODO: check in not already defined
+#endif 
