@@ -3,7 +3,7 @@
 #define TEP_List_1
 
 // String type support
-#include <string>;
+#include <string>
 using namespace std; 
 
 // Constants:
