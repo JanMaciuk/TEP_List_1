@@ -63,7 +63,10 @@ bool b_dealloc_table_2_dim(int **piTable, int iSizeX, int iSizeY) {
 	//Weryfikacja wymiarów
 	if (iSizeX < 1 || iSizeY < 1) {
 		std::cout << msg_err_table_size;
-		delete[] piTable; // I tak usuwam pod podanym adresem, lepiej tak ni¿ zostawiæ w pamiêci coœ co oczekujeny ¿e zosta³o usuniête.
+		if (piTable != nullptr)
+		{
+			delete[] piTable; // I tak usuwam pod podanym adresem, lepiej tak ni¿ zostawiæ w pamiêci coœ co oczekujeny ¿e zosta³o usuniête.
+		}
 		return false;
 	}
 	//Sprawdzenie czy tablica zosta³a zaalokowana
@@ -74,7 +77,7 @@ bool b_dealloc_table_2_dim(int **piTable, int iSizeX, int iSizeY) {
 
 	for (int i = 0; i < iSizeY; i++)
 	{
-		delete[] piTable[i];
+		if (piTable[i] != NULL) delete[] piTable[i];
 	}
 	delete[] piTable;
 
