@@ -1,7 +1,7 @@
 
 
 #include <iostream>
-#include "TEP_List_1.h"
+#include "Functions123.h"
 
 using namespace std;
 
@@ -45,6 +45,7 @@ bool b_alloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
 
 	//Alokacja listy wskaŸników na rzêdy tablicy
 	*piTable = new int*[iSizeY];
+	if (*piTable == NULL) return false;  // Gdyby z jakiegoœ powodu alokacja siê nie powiod³a (b³¹d pamiêci?), informujemy o tym i koñczymy funkcjê.
 
 	//Alokacja samej listy, ka¿da wartoœæ piTable wskazuje na rz¹d tablicy
 	for (int i = 0; i < iSizeY; i++)
@@ -58,28 +59,28 @@ bool b_alloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
 
 }
 
-bool b_dealloc_table_2_dim(int **piTable, int iSizeX, int iSizeY) {
+bool b_dealloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
 
 	//Weryfikacja wymiarów
 	if (iSizeX < 1 || iSizeY < 1) {
 		std::cout << msg_err_table_size;
-		if (piTable != NULL) //nullptr jest niezgodne z C++98, wiêc u¿ywam NULL
+		if (*piTable != NULL) //nullptr jest niezgodne z C++98, wiêc u¿ywam NULL
 		{
-			delete[] piTable; // I tak usuwam pod podanym adresem, lepiej tak ni¿ zostawiæ w pamiêci coœ co oczekujeny ¿e zosta³o usuniête.
+			delete[] *piTable; // I tak usuwam pod podanym adresem, lepiej tak ni¿ zostawiæ w pamiêci coœ co oczekujeny ¿e zosta³o usuniête.
 		}
 		return false;
 	}
 	//Sprawdzenie czy tablica zosta³a zaalokowana
-	if (piTable == NULL) {
+	if (*piTable == NULL) {
 		std::cout << msg_err_not_allocated;
 		return false;
 	}
 
 	for (int i = 0; i < iSizeY; i++)
 	{
-		if (piTable[i] != NULL) delete[] piTable[i];
+		if ((*piTable)[i] != NULL) delete[] (*piTable)[i];
 	}
-	delete[] piTable;
+	delete[] *piTable;
 
 	std::cout << msg_succesfull_execution << f_name_dealloc_table_2_dim << new_line << new_line;
 	return true;
@@ -92,7 +93,7 @@ bool b_dealloc_table_2_dim(int **piTable, int iSizeX, int iSizeY) {
 	 int** pi_table;
 	 b_alloc_table_2_dim( &pi_table, table_2_size_X, table_2_size_Y);
 
-	 b_dealloc_table_2_dim(pi_table, table_2_size_X, table_2_size_Y);
+	 b_dealloc_table_2_dim(&pi_table, table_2_size_X, table_2_size_Y);
 
 
  }

@@ -30,6 +30,6 @@ const string f_name_dealloc_table_2_dim = "b_dealloc_table_2_dim";
 // Function prototypes declarations:
 void v_alloc_table_fill_34(int iSize);
 bool b_alloc_table_2_dim(int*** piTable, int iSizeX, int iSizeY);
-bool b_dealloc_table_2_dim(int** piTable, int iSizeX, int iSizeY);
+bool b_dealloc_table_2_dim(int*** piTable, int iSizeX, int iSizeY);
 
 #endif 

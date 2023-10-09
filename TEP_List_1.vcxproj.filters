@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TEP_List_1.cpp">
+    <ClCompile Include="Functions123.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
