@@ -3,7 +3,6 @@
 #include <iostream>
 #include "Functions123.h"
 
-using namespace std;
 
 void v_alloc_table_fill_34(int iSize) 
 {
@@ -86,17 +85,6 @@ bool b_dealloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
 	return true;
 }
 
- int main()
- {
-	 std::cout << msg_program_initialized;
-	 v_alloc_table_fill_34(table_1_size);
-	 int** pi_table;
-	 b_alloc_table_2_dim( &pi_table, table_2_size_X, table_2_size_Y);
-
-	 b_dealloc_table_2_dim(&pi_table, table_2_size_X, table_2_size_Y);
-
-
- }
 
 
 

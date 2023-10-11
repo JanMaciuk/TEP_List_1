@@ -1,4 +1,4 @@
-// Prevent including the header multiple times (not really possible in a single .cpp project, but a good practice to follow)
+// Prevent including the header multiple times
 #ifndef TEP_List_1
 #define TEP_List_1
 
@@ -14,7 +14,6 @@ const int table_2_size_X = 3;
 const int table_2_size_Y = 3;
 
 // Messages:
-const string msg_program_initialized = "Poprawna inicjalizacja programu \n\n";
 const string msg_err_table_size = "Table size invalid, check passed value\n";
 const string msg_table_allocated = "Aloccated a table of size ";
 const string msg_table_filled = "Table filled with value ";
