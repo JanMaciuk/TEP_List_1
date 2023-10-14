@@ -73,9 +73,14 @@
 	}
 	CTable* CTable::pcClone() 
 	{
-		// Usuwam istniej¹cego konstruktora kopiuj¹cego, komenda "zwróc kopie samego siebie"
+		// U¿ywam istniej¹cego konstruktora kopiuj¹cego, komenda "zwróc kopie samego siebie"
 		return new CTable(*this);
 	}
+
+	//Procedury:
+	//a->b == (*a).b, strza³ka jest jak kropka ze wskaŸnikiem.
+	void CTable::v_mod_tab(CTable* pcTab, int iNewSize) { pcTab->bSetNewSize(iNewSize); }
+	void CTable::v_mod_tab(CTable cTab, int iNewSize)   { cTab.bSetNewSize(iNewSize); }
 
 //Destruktor:
 	CTable::~CTable() 
