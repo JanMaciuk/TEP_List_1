@@ -14,10 +14,11 @@ const int table_2_size_X = 3;
 const int table_2_size_Y = 3;
 
 // Messages:
-const string msg_err_table_size = "Table size invalid, check passed value\n";
-const string msg_table_allocated = "Aloccated a table of size ";
-const string msg_table_filled = "Table filled with value ";
-const string msg_succesfull_execution = "Succesfully executed ";
+const string msg_printing_table = "Wypisuje zawartosc tablicy:\n";
+const string msg_err_table_size = "Nieprawidlowy rozmiar tablicy, sprawdz przekazana wartosc\n";
+const string msg_table_allocated = "Zaalokowano tablice o rozmiarze ";
+const string msg_table_filled = "Wypelniono tablice wartoscia ";
+const string msg_succesfull_execution = "Pomyslnie wykonano ";
 const string new_line = "\n";
 const string msg_err_not_allocated = "Invalid argument passed, seems like table is not allocated properly\n";
 // Function names:

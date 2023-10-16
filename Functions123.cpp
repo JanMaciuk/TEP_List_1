@@ -24,10 +24,13 @@ void v_alloc_table_fill_34(int iSize)
 
 
 	//Wypisanie stanu tablicy:
-	std::cout << msg_table_allocated << iSize <<new_line;
-	std::cout << msg_table_filled << table_1[0] << new_line;
-	//Pobieram wartoœæ z tablicy nie ze sta³ej aby zweryfikowaæ poprawne wype³nienie
-	
+	cout << msg_table_allocated << iSize <<new_line;
+	cout << msg_table_filled << table_1_int_value << new_line;
+	cout << msg_printing_table;
+	for (int i = 0; i < iSize; i++)
+	{
+		cout << table_1[i] << new_line;
+	}
 
 
 	// Dealokacja tablicy
@@ -43,7 +46,7 @@ bool b_alloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
 	}
 
 	//Alokacja listy wskaŸników na rzêdy tablicy
-	*piTable = new int*[iSizeY];
+	*piTable = new int*[iSizeY]; 
 	if (*piTable == NULL) return false;  // Gdyby z jakiegoœ powodu alokacja siê nie powiod³a (b³¹d pamiêci?), informujemy o tym i koñczymy funkcjê.
 
 	//Alokacja samej listy, ka¿da wartoœæ piTable wskazuje na rz¹d tablicy
