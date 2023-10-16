@@ -5,7 +5,7 @@
 int main()
 {
 	
-	v_alloc_table_fill_34(table_1_size);
+	b_alloc_table_fill_34(table_1_size);
 
 	int** pi_table;
 	b_alloc_table_2_dim(&pi_table, table_2_size_X, table_2_size_Y);

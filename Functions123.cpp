@@ -4,13 +4,13 @@
 #include "Functions123.h"
 
 
-void v_alloc_table_fill_34(int iSize) 
+bool b_alloc_table_fill_34(int iSize) 
 {
 	//Weryfikacja czy zadany rozmiar tablicy ma sens
 	if (iSize < 1) 
 	{
 		std::cout << msg_err_table_size;
-		return;
+		return false;
 	}
 	//Alokacja tablicy o rozmiarze iSize:
 	int* table_1;				
@@ -36,6 +36,7 @@ void v_alloc_table_fill_34(int iSize)
 	// Dealokacja tablicy
 	delete[] table_1;
 	std::cout <<msg_succesfull_execution << f_name_alloc_table << new_line << new_line;
+	return true;
 }
 
 bool b_alloc_table_2_dim(int ***piTable, int iSizeX, int iSizeY) {
