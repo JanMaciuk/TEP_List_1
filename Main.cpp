@@ -48,5 +48,12 @@ int main()
 	//Dziêki deklaracji na stosie, pamiêæ zwalniana jest automatycznie po zakoñczeniu main().
 	//Podczas dealokacji wywo³ywany jest destruktor dla ka¿dego obiektu w tablicy, co widaæ w wyjœciu programu.
 
+	//Modyfikacja na zajêciach:
+	CTable* table1234 = new CTable(false);
+	CTable* tableEnd1;
+	table1234->vADD1ANDCopy(&tableEnd1);
+	delete table1234;
+	delete tableEnd1;
+
 	return 0;
 }

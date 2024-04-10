@@ -17,7 +17,8 @@ const string size_string = ", Rozmiar: ";
 const string line_break = "\n";
 const string renamed_string = "Tabela z nowa nazwa";
 const string msg_err_table_smaller = " to zbyt maly rozmiar, zmniejszanie rozmiaru tabeli nie jest dozwolone, minimalny rozmiar to ";
-
+const string table1234_name = "tabela 1234";
+const int table1234_length = 4;
 class CTable
 {
 	private:
@@ -30,13 +31,15 @@ class CTable
 		//Constructors:
 		CTable();
 		CTable(string sName, int iTableLen);
-		CTable(CTable &pcOther);
+		CTable(const CTable &pcOther);
+		CTable(bool);
 
 		//Methods:
 		void vSetName(string sName);
 		bool bSetNewSize(int iTableLen);
 		void vPrintData();
 		CTable* pcClone();
+		void  vADD1ANDCopy(CTable** copyAdress);
 
 		//Procedures:
 		static void v_mod_tab(CTable* pcTab, int iNewSize);

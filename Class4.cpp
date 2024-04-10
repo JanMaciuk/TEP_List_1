@@ -21,7 +21,7 @@
 		std::cout << param_string << s_name << line_break << line_break;
 	}
 
-	CTable::CTable(CTable& pcOther) 
+	CTable::CTable(const CTable& pcOther) 
 	{
 		s_name = pcOther.s_name + "_copy";
 		length = pcOther.length;
@@ -32,6 +32,18 @@
 		}
 		std::cout << copy_string << s_name << line_break << line_break;
 	}
+
+	CTable::CTable(bool)
+	{
+		s_name = table1234_name;
+		length = table1234_length;
+		array = new int[length];
+		for (int i = 0; i < length; i++)
+		{
+			array[i] = i + 1;
+		}
+	}
+		
 
 
 //Metody:
@@ -75,6 +87,28 @@
 	{
 		// U¿ywam istniej¹cego konstruktora kopiuj¹cego, komenda "zwróc kopie samego siebie"
 		return new CTable(*this);
+	}
+
+	void CTable::vADD1ANDCopy(CTable** copyAdress) 
+	{
+		// Najpierw tworzê kopie tej tablicy pod adresem copyAdress
+		*copyAdress = new CTable(*this);
+		// Nastêpnie zwiêkszam rozmiar tej tablicy o 1
+		(*copyAdress)->bSetNewSize(length + 1);
+		// Ustawiam ostatni element na 1
+		(*copyAdress)->array[(*copyAdress)->length - 1] = 1;
+		//Wyœwietlam zawartoœæ obu tablic:
+		vPrintData();
+		for (int i = 0; i < this->length; i++)
+		{
+			std::cout << this->array[i] << line_break;
+		}
+		(*copyAdress)->vPrintData();
+		for (int i = 0; i < (*copyAdress)->length; i++)
+		{
+			std::cout << (*copyAdress)->array[i] << line_break;
+		}
+
 	}
 
 	//Procedury:
